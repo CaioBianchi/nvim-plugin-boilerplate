@@ -1,11 +1,11 @@
 package = 'nvim-plugin-boilerplate'
 version = 'scm-1'
 source = {
-  url = 'git+https://github.com/your-name/nvim-plugin-boilerplate.git',
+  url = 'git+https://github.com/caiobianchi/nvim-plugin-boilerplate.git',
 }
 description = {
   summary = 'Minimal boilerplate for a Lua-based Neovim plugin',
-  homepage = 'https://github.com/your-name/nvim-plugin-boilerplate',
+  homepage = 'https://github.com/caiobianchi/nvim-plugin-boilerplate',
   license = 'MIT',
 }
 dependencies = {

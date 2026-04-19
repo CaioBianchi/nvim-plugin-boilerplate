@@ -11,6 +11,7 @@ Minimal Lua boilerplate for a Neovim plugin.
 
 - `setup()` function for user configuration
 - Example user command: `:NvimPluginBoilerplateHello`
+- Example feature command: `:NvimPluginBoilerplateToggleRelativeNumber`
 - Example Lua API: `require("nvim_plugin_boilerplate").hello()`
 
 ## Installation
@@ -19,7 +20,7 @@ Minimal Lua boilerplate for a Neovim plugin.
 
 ```lua
 {
-  "your-name/nvim-plugin-boilerplate",
+  "caiobianchi/nvim-plugin-boilerplate",
   config = function()
     require("nvim_plugin_boilerplate").setup({
       message = "Hello from my plugin",
@@ -31,6 +32,8 @@ Minimal Lua boilerplate for a Neovim plugin.
 ## Development
 
 The plugin command is defined in `plugin/`, and the implementation lives in `lua/`.
+
+The sample feature toggles `relativenumber` in the current window so the template includes one command that changes editor state in a visible way.
 
 Rename the project directory, Lua module, and command names to match your plugin before publishing.
 
