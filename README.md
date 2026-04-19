@@ -34,6 +34,14 @@ The plugin command is defined in `plugin/`, and the implementation lives in `lua
 
 Rename the project directory, Lua module, and command names to match your plugin before publishing.
 
+Common development tasks are available through `make`:
+
+```sh
+make test
+make lint
+make format
+```
+
 ## Testing
 
 This boilerplate includes a minimal `plenary.nvim` test setup.
@@ -55,3 +63,7 @@ The command above assumes `plenary.nvim` is available at `.tests/plenary.nvim`.
 ## CI
 
 The included GitHub Actions workflow runs `stylua --check` and the headless Plenary test suite on pushes and pull requests.
+
+## Releases
+
+Pushing a tag that matches `v*` triggers the release workflow and creates a GitHub release.
