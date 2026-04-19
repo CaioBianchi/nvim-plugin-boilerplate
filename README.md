@@ -38,10 +38,20 @@ Rename the project directory, Lua module, and command names to match your plugin
 
 This boilerplate includes a minimal `plenary.nvim` test setup.
 
+Fetch the local test dependency with:
+
+```sh
+./scripts/setup-tests.sh
+```
+
 Run the test suite from Neovim with:
 
 ```sh
-nvim --headless -u NONE -c "set rtp+=.,./.tests/plenary.nvim" -c "luafile tests/minimal_init.lua" -c "PlenaryBustedDirectory tests/spec { minimal_init = 'tests/minimal_init.lua' }" -c qa
+nvim --headless -u NONE -c "luafile tests/minimal_init.lua" -c "PlenaryBustedDirectory tests/spec { minimal_init = 'tests/minimal_init.lua' }" -c qa
 ```
 
 The command above assumes `plenary.nvim` is available at `.tests/plenary.nvim`.
+
+## CI
+
+The included GitHub Actions workflow runs `stylua --check` and the headless Plenary test suite on pushes and pull requests.
