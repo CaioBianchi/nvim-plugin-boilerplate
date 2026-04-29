@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Neovim
         uses: rhysd/action-setup-vim@v1
@@ -18,11 +18,13 @@ jobs:
           neovim: true
           version: stable
 
-      - name: Set up StyLua
-        uses: JohnnyMorganz/stylua-action@v4
-        with:
-          version: latest
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install StyLua
+        env:
+          STYLUA_VERSION: 2.4.1
+        run: |
+          curl -fsSL "https://github.com/JohnnyMorganz/StyLua/releases/download/v${STYLUA_VERSION}/stylua-linux-x86_64.zip" -o stylua.zip
+          unzip -q stylua.zip
+          sudo install stylua /usr/local/bin/stylua
 
       - name: Check formatting
         run: stylua --check .
